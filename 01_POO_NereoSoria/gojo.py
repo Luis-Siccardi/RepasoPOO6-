@@ -56,7 +56,7 @@ class PersonajeGojo:
 
     def atacar_infinito(self, enemigo):
         if self.tiene_infinito and self.energia_maldita >= 40:
-            self.turnos_protegido = 2  # Establecer la duración del efecto
+            self.turnos_protegido = 2 
             print(f"{self.nombre} utiliza el ataque Infinito. Estará protegido por 2 turnos.")
             self.energia_maldita -= 40
         else:

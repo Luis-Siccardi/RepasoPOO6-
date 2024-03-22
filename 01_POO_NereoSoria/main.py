@@ -36,7 +36,7 @@ def menu_inicial():
         if opcion == "1":
             main()
         elif opcion == "2":
-            mostrar_menu_compras(Personaje("", 0, 0, 0))
+            mostrar_menu_compras()
         else:
             print("Opción no válida. Por favor, selecciona 1 o 2.")
 
@@ -144,5 +144,4 @@ def main():
         if continuar.lower() != "s":
             break
 
-if __name__ == "__main__":
-    menu_inicial()
+menu_inicial()
