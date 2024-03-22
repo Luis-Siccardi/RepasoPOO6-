@@ -1,7 +1,5 @@
 import random
 
-
-
 menu = '''#================================#
 #           Pelear   -   1       #
 #================================#
@@ -43,8 +41,6 @@ Luch2 = '''#================================#
 #================================#
 # '''
 
-
-
 class Luchador:
     
     def __init__(self, nombre, vida, danio):
@@ -69,8 +65,6 @@ class Luchador:
     def estarVivo(self):
         return self.vida > 0
 
-
-
 luchador1 = Luchador("Superman", 110, 45)
 luchador2 = Luchador("Macri", 80, 55)
 luchador3 = Luchador("Profe Luis", 50, 75)
@@ -79,47 +73,42 @@ luchador5 = Luchador("Lebron James", 100, 45)
 
 jugadores = [luchador1, luchador2, luchador3, luchador4, luchador5]
 
+jugador = int(input(Luch1))
+enemigo = int(input(Luch2))
 
+jugador1 = jugadores[jugador]
+jugador2 = jugadores[enemigo]
 
-def juego():
+turno = 0
 
-    jugador = int(input(Luch1))
-    enemigo = int(input(Luch2))
+while jugador1.estarVivo() and jugador2.estarVivo():
 
-    jugador1 = jugadores[jugador]
-    jugador2 = jugadores[enemigo]
+    if turno == 0 and jugador2.estarVivo():
+
+        decisionRival = random.randint(0,1)
+
+        if decisionRival == 0:
+            jugador2.curarse()
     
-    turno = 0
-
-    while jugador1.estarVivo() and jugador2.estarVivo():
-
-        if turno == 0:
-            decisionRival = random.randint(0,1)
-
-            if decisionRival == 0:
-                jugador2.curarse()
+        elif decisionRival == 1:
+            jugador2.atacar(jugador1)
         
-            elif decisionRival == 1:
-                jugador2.atacar(jugador1)
-            
-            turno = 1
-        
-        if turno == 1:
-            
-            decisionJugador = int(input(menu))
-
-            if decisionJugador == 0:
-                jugador1.curarse()
-        
-            elif decisionJugador == 1:
-                jugador1.atacar(jugador2)
-            
-            turno = 0
+        turno = 1
     
-    if not jugador1.estarVivo():
-        print(f"{jugador1.nombre} ha sido derrotado")
-    
-    elif not jugador2.estarVivo():
-        print(f"{jugador2.nombre} ha sido derrotado")
+    if turno == 1 and jugador1.estarVivo():
+        
+        decisionJugador = int(input(menu))
 
-juego()
+        if decisionJugador == 0:
+            jugador1.curarse()
+    
+        elif decisionJugador == 1:
+            jugador1.atacar(jugador2)
+        
+        turno = 0
+
+if not jugador1.estarVivo():
+    print(f"{jugador1.nombre} ha sido derrotado")
+
+elif not jugador2.estarVivo():
+    print(f"{jugador2.nombre} ha sido derrotado")
