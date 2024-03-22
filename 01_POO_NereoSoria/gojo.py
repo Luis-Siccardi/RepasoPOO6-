@@ -38,7 +38,7 @@ class PersonajeGojo:
             print(f"{self.nombre} recibe {danho} de daño.")
 
     def atacar_rojo(self, enemigo):
-        if self.energia_maldito >= 20:
+        if self.energia_maldita >= 20:
             danho = random.randint(0, self.ataque)
             enemigo.recibir_danho(danho)
             print(f"{self.nombre} ataca a {enemigo.nombre} con ataque Rojo y le inflige {danho} de daño.")
