@@ -57,8 +57,8 @@ enemy_4 = Player("fastasma", 100, 50)
 enemy_5 = Player("baso",1 ,0 )
 
 enemys = [enemy_1,enemy_2,enemy_3,enemy_4,enemy_5]
-# comenzar pelea   
-while jugador1.vivo():
-    if 
 
-    else
+enemigoelegido = random.choice(enemys)
+print(enemigoelegido)
+
+# comenzar pelea   
