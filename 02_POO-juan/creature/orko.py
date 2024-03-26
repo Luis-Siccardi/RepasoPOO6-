@@ -1,6 +1,6 @@
 from creature import Creature
 import random
-class mouster(Creature):
+class orko(Creature):
     def __init__(self, name, life, dange, defence, magic_danger, defence_magic, extra_dange):
         super().__init__(name, life, dange, defence, magic_danger, defence_magic, extra_dange)
 
