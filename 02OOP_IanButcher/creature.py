@@ -70,3 +70,5 @@ class Creature:
         print(lineas)
         print (f"{self.name} Se ha curado {healed}! Ahora tiene {self.actualHealthPoints}")
         print(lineas)
+
+
